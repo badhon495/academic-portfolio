@@ -55,12 +55,6 @@ I have created this simple academic portfolio template to showcase my research, 
 4. Edit `index.html` to add your own information, projects, and research
 5. Replace the profile image in `images/profilePic.jpeg` and resume in `data/Demo_Resume.pdf`
 
-## Customization Tips
-
-- To change the popup form, edit `js/mail.js` and `css/mail.css`
-- To adjust dark mode, edit `js/dark_mode.js` and CSS files
-- For new sections, copy the structure of existing `<table class="section">` blocks
-- All icons are from [Bootstrap Icons](https://icons.getbootstrap.com/)
 
 ## Contribution
 If you find any issues or have suggestions, feel free to open an issue or submit a pull request. Contributions are welcome!
