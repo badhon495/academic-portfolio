@@ -54,6 +54,7 @@ I have created this simple academic portfolio template to showcase my research, 
    - If you rename your repository to `YOUR-USERNAME.github.io`, your portfolio will be accessible at `https://YOUR-USERNAME.github.io/` (without the `/academic-portfolio/` part), which looks more professional and is easier to share.
 4. Edit `index.html` to add your own information, projects, and research
 5. Replace the profile image in `images/profilePic.jpeg` and resume in `data/Demo_Resume.pdf`
+6. To get the form working, you can use the provided FormSubmit service. Go to the [FormSubmit website](https://formsubmit.io) and follow the instructions to set up your form. You can customize the form action URL in the bottom of the `index.html` file. Also edit the `mail.js` file to change the email address where you want to receive messages.
 
 
 ## Contribution
