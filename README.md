@@ -1,5 +1,6 @@
-# Academic Portfolio
 <div align="center">
+
+# Academic Portfolio
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
@@ -7,11 +8,12 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
 ![FormSubmit](https://img.shields.io/badge/FormSubmit-Form-00B2FF?style=flat-square)
 
-</div>
+
 
 I have created this simple academic portfolio template to showcase my research, projects, and professional experience. It is designed to be easy to use and customize, with a focus on clean design and accessibility. You can check the site live at:
 
 **Portfolio Site:** [https://badhon495.github.io](https://badhon495.github.io)
+</div>
 
 ## Features
 
@@ -59,3 +61,9 @@ I have created this simple academic portfolio template to showcase my research, 
 
 ## Contribution
 If you find any issues or have suggestions, feel free to open an issue or submit a pull request. Contributions are welcome!
+
+---
+
+<div align="center">
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
