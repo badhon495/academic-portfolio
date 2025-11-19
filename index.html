@@ -3,241 +3,407 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Jane Doe - Demo Portfolio</title>
-	<meta name="author" content="Jane Doe">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<title>Your Name - Academic Portfolio</title>
+
+	<meta name="author" content="Your Name">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Demo portfolio for Jane Doe, a fictional web developer and designer. Showcasing random projects, skills, and experiences.">
+	<meta name="description"
+		content="Academic portfolio showcasing research, projects, and professional experience in Computer Science and related fields.">
+
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="css/mail.css">
+
+	<!-- Immediate theme detection to prevent flash -->
+	<script>
+		// Detect user preference immediately and apply class to prevent flash
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark-mode');
+		}
+	</script>
+
 	<script src="js/dark_mode.js" defer></script>
 	<script src="js/mail.js" defer></script>
 	<script src="js/last_modified.js" defer></script>
+	<script src="js/hamburger.js" defer></script>
+	<script src="js/navbar_scroll.js" defer></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-	<meta name="google-site-verification" content="demo-verification-code" />
+
+	<link rel="icon" type="image/svg+xml"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='65%25' font-size='70' text-anchor='middle' fill='%238dd3e3' font-family='sans-serif' font-weight='bold'%3EY%3C/text%3E%3C/svg%3E" />
+
 </head>
 
 <body>
-	<i class="bi bi-brightness-high-fill" id="toggleDark"></i>
-	<table class="section">
+	<!-- Navigation Bar -->
+	<nav class="navbar">
+		<div class="navbar-container">
+			<!-- Hamburger menu button (only visible on mobile) -->
+			<button class="hamburger" id="hamburger" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			
+			<!-- Main navigation links -->
+			<a href="#Bio" class="nav-link nav-desktop">Bio</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Education" class="nav-link">Education</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Project" class="nav-link">Project</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Experience" class="nav-link">Experience</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Research" class="nav-link nav-desktop">Research</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Technical_Skill" class="nav-link nav-desktop">Technical Skill</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Miscellaneous" class="nav-link nav-desktop">Miscellaneous</a>
+		</div>
+		
+		<!-- Mobile menu (hamburger dropdown) -->
+		<div class="mobile-menu" id="mobileMenu">
+			<a href="#Bio">Bio</a>
+			<a href="#Research">Research</a>
+			<a href="#Technical_Skill">Technical Skill</a>
+			<a href="#Experience">Experience</a>
+			<a href="#Miscellaneous">Miscellaneous</a>
+		</div>
+	</nav>
+
+	<table class="section" id="Bio" style="margin-top: 30px;">
 		<tbody>
 			<tr style="padding:0px">
 				<td>
 					<table class="section profile-section">
 						<tbody>
 							<tr style="padding:0px">
-								<td style="padding:2.5%;width:63%;vertical-align:middle" class="profile-text">
-									<span style="font-size: 2em;">Hello! I am</span>
-									<p class="name" style="text-align:center; font-size:2.5em;">Jane Doe</p>
-									<p style="text-align: justify;">A passionate web developer and designer from DemoLand. I love building creative web applications and exploring new technologies. Currently, I am working as a freelance developer and learning about AI and cloud computing.<br><br></p>
-									<p style="text-align:center">
-										<a href="data/Demo_Resume.pdf">Resume</a> &nbsp;/&nbsp;
-										<a href="mailto:jane.doe@example.com">Email</a> &nbsp;/&nbsp;
-										<a href="https://github.com/janedoe">Github</a> &nbsp;/&nbsp;
-										<a href="https://linkedin.com/in/janedoe">Linkedin</a> &nbsp;/&nbsp;
-										<a href="https://scholar.google.com/citations?user=janedoe">Google Scholar</a> &nbsp;/&nbsp;
-										<a href="https://janedoe.blog">Blog</a>
+								<td style="width:100%;vertical-align:middle;text-align:center;">
+									<!-- Profile Image -->
+									<div style="margin-bottom: 20px;">
+										<a href="images/profile-placeholder.jpg"><img
+												style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
+												alt="profile photo placeholder"
+												src="images/profile-placeholder.jpg" class="hoverZoomLink" loading="eager"
+												decoding="async" width="400" height="400"></a>
+									</div>
+									
+									<!-- Name -->
+									<p class="name" style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
+										Your Full Name
 									</p>
-									<p style="text-align:center">
-										<a href="#Education">Education</a> &nbsp;/&nbsp;
-										<a href="#Research">Research</a> &nbsp;/&nbsp;
-										<a href="#Project">Project</a> &nbsp;/&nbsp;
-										<a href="#Appointment">Appointment</a> <br>
-										<a href="#Technical_Skill">Technical Skill</a> <br>
-										<a href="#Service">Service</a> &nbsp;/&nbsp;
-										<a href="#Miscellaneous">Miscellaneous</a> &nbsp;/&nbsp;
-										<a href="#" id="anonymousMessageLink">Anonymous Message</a>
+
+									<!-- Links -->
+									<p style="text-align:center; margin-top: 5px; margin-bottom: 50px; font-size: 0.8em;">
+										<a href="data/resume.pdf">Resume</a> &nbsp;/&nbsp;
+										<a href="mailto:youremail@example.com">Email</a> &nbsp;/&nbsp;
+										<a href="https://www.github.com/yourusername">Github</a> &nbsp;/&nbsp;
+										<a href="https://www.linkedin.com/in/yourusername">Linkedin</a> &nbsp;/&nbsp;
+										<a href="https://leetcode.com/yourusername/">LeetCode</a> &nbsp;/&nbsp;
+										<a href="https://yourusername.hashnode.dev/">Blog</a>
 									</p>
-								</td>
-								<td style="padding:2.5%;width:40%;max-width:40%" class="profile-image">
-									<a href="images/profilePic.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo of Jane Doe" src="images/profilePic.jpeg" class="hoverZoomLink" loading="eager" decoding="async" width="400" height="400"></a>
+
+									<!-- Bio -->
+									<p style="text-align: justify; max-width: 800px; margin: 20px auto;">
+										A passionate <b>Computer Science</b> student with a strong foundation in <b>Software Development</b>, 
+										<b>System Design</b>, and <b>Problem Solving</b>. Currently pursuing my 
+										Bachelor's degree at <a href="https://university.edu/">Your University</a>. 
+										I have demonstrated expertise in <b>full-stack development</b>, <b>data structures</b>, and 
+										<b>algorithms</b> through diverse academic projects and hands-on experiences.
+										<br><br>
+										My journey spans across multiple domains including <b>Web Development</b>, 
+										<b>Machine Learning</b>, and <b>Database Systems</b>, where I actively explore innovative solutions 
+										and industry best practices. With a proven ability to deliver <b>practical, scalable solutions</b> 
+										while maintaining academic excellence, I am passionate about building <b>efficient systems</b> that 
+										solve real-world problems. I continuously push my technical boundaries through hands-on projects, 
+										contributing to open-source, and staying current with evolving technologies.
+										<br><br>
+									</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<table class="section">
+
+					<table class="section" style="margin-top: -20px;">
 						<tbody>
 							<tr>
 								<td class="sub-section">
 									<h2 id="Education">Education & Certification</h2>
+									<p style="text-align: justify;">
 									<ul>
-										<li><b>BSc in Computer Science</b> [2020 - 2024]<br>Demo University, DemoLand<br><ul><li>CGPA: 4.00/4.00</li><li>Dean's List (2021, 2022, 2023)</li></ul></li>
+										<li>
+											<b>Pursuing Bachelor of Science in <a
+													href="https://university.edu/program/computer-science">Computer
+													Science</a></b> [Month Year - ]
+											<br>
+											<a href="https://university.edu/">Your University Name</a> <br>
+											<ul>
+												<li><b>CGPA</b> : <b>X.XX/4.00</b></li>
+												<li>Recognized on the <b>Dean's List</b> and awarded <b>Merit Scholarship</b> across <b>multiple semesters</b> for academic excellence.</li>
+												<li>Completed several <b>elective courses</b> focused on
+													<b>emerging and practical technologies</b>:
+													<ul>
+														<li>CSE101: Data Structures and Algorithms</li>
+														<li>CSE202: Web Development</li>
+														<li>CSE303: Database Systems</li>
+														<li>CSE404: Machine Learning</li>
+														<li>CSE505: Software Engineering</li>
+														<li>CSE606: Computer Networks</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
 									</ul>
 									<ul>
-										<li><b>Certified Web Developer</b> [2023]<br>Demo Institute of Technology<br><ul><li>Completed advanced web development bootcamp</li><li>Built 10+ demo projects</li></ul></li>
+										<li><b>Completed
+												<a href="https://coursera.org/certificate/example">Professional Certificate in Technology</a></b> [Year]<br>
+											<ul>
+												<li>Acquired skills in <b>recognizing and addressing</b> common technical challenges</li>
+												<li>Gained <b>hands-on experience</b> in <b>practical problem solving</b></li>
+												<li>Mastered <b>programming language</b> for practical applications</li>
+												<li>Developed proficiency in <b>relevant tools and technologies</b></li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul>
-										<li><b>Cloud Computing Certificate</b> [2024]<br>Cloud Academy<br><ul><li>Hands-on labs with AWS, Azure, and GCP</li></ul></li>
+										<li>
+											<b>Completed <a href="https://example.com/certification">Industry Certification Program</a></b> [Year]<br>
+											<ul>
+												<li>Gained comprehensive knowledge in <b>specific technical domain</b></li>
+												<li>Completed <b>hands-on projects</b> demonstrating practical skills</li>
+												<li>Learned industry best practices and <b>modern development methodologies</b></li>
+											</ul>
+										</li>
 									</ul>
-									<ul>
-										<li><b>AI Fundamentals</b> [2024]<br>AI Demo School<br><ul><li>Learned basics of machine learning and neural networks</li></ul></li>
-									</ul>
+
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<table class="section">
-	<tbody>
-		<tr>
-			<td class="sub-section">
-				<h2 id="Research">Research</h2>
-				<ul class="extra_gap">
-					<li><b><a href="#">Demo Research Project</a></b> [2024]<br>
-					Published in Demo Journal of Web Applications<br>
-					<ul>
-						<li>Investigated random data generation techniques.</li>
-						<li>Developed a prototype for a demo application.</li>
-					</ul>
-					</li>
-				</ul>
-				<ul class="extra_gap">
-					<li><b><a href="#">AI for Demo Applications</a></b> [2023]<br>
-					Published in Demo AI Conference<br>
-					<ul>
-						<li>Explored the use of AI to generate demo content.</li>
-						<li>Automated demo workflows using machine learning.</li>
-					</ul>
-					</li>
-				</ul>
-				<ul class="extra_gap">
-					<li><b><a href="#">Cloud Scalability Study</a></b> [2022]<br>
-					Published in Demo Cloud Symposium<br>
-					<ul>
-						<li>Analyzed scalability of demo web apps on various cloud platforms.</li>
-						<li>Benchmarked performance across AWS, Azure, and GCP.</li>
-					</ul>
-					</li>
-				</ul>
-				<ul class="extra_gap">
-					<li><b><a href="#">UI/UX Trends in Demo Sites</a></b> [2024]<br>
-					Published in Demo Design Review<br>
-					<ul>
-						<li>Surveyed modern UI/UX patterns in demo portfolios and landing pages.</li>
-						<li>Identified best practices for demo site usability.</li>
-					</ul>
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
+
+
+
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
 									<h2 id="Project">Project</h2>
+									<p style="text-align: justify;">
 									<ul class="extra_gap">
-										<li><b><a href="#">DemoShop</a></b> [2024]<br><ul><li>E-commerce demo site with fake products and checkout.</li><li>Built with React and Node.js.</li></ul></li>
+										<li>
+											<b><a href="https://github.com/username/project-one">Full-Stack Web Application</a></b> [Year]<br>
+											<ul>
+												<li>Description of your full-stack web application project. Include key features, technologies used, and what problems it solves. Mention any unique aspects or innovative approaches you implemented.</li>
+												<li><b>Skills Gained:</b> Full-stack development with modern frameworks, implementing authentication systems, database design and optimization, API development, responsive UI/UX design.</li>
+												<li><b>Live Demo:</b> <a href="https://demo.example.com" target="_blank">https://demo.example.com</a></li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul class="extra_gap">
-										<li><b><a href="#">TaskMaster</a></b> [2023]<br><ul><li>Task management app for demo teams.</li><li>Features drag-and-drop and notifications.</li></ul></li>
+										<li>
+											<b><a href="https://github.com/username/project-two">Machine Learning Project</a></b> [Year]<br>
+											<ul>
+												<li>Description of your machine learning project. Explain the problem you're solving, the dataset used, and the algorithms implemented. Highlight accuracy rates or performance metrics.</li>
+												<li><b>Impact:</b> Achieved XX% accuracy in solving a real-world problem, demonstrating practical application of ML techniques.</li>
+												<li><b>Skills Gained:</b> Data preprocessing, feature engineering, model training and evaluation, working with popular ML libraries.</li>
+												<li><b>Live Demo:</b> <a href="https://ml-demo.example.com" target="_blank">https://ml-demo.example.com</a></li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul class="extra_gap">
-										<li><b><a href="#">Weatherly</a></b> [2023]<br><ul><li>Weather forecast app using random data.</li><li>Built with Vue.js and OpenWeatherMap API (demo key).</li></ul></li>
+										<li>
+											<b><a href="https://github.com/username/project-three">Mobile Application</a></b> [Year]<br>
+											<ul>
+												<li>Description of your mobile app project. Detail the functionality, user interface, and platform(s) it supports. Mention any integrations or APIs used.</li>
+												<li><b>Impact:</b> Served XXX+ users, demonstrating strong user adoption and value.</li>
+												<li><b>Skills Gained:</b> Mobile app development, state management, API integration, responsive design for multiple screen sizes.</li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul class="extra_gap">
-										<li><b><a href="#">Portfolio Generator</a></b> [2022]<br><ul><li>Generates random portfolios for demo users.</li><li>Built with Python and Flask.</li></ul></li>
+										<li>
+											<b><a href="https://github.com/username/project-four">Automation Tool</a></b> [Year]<br>
+											<ul>
+												<li>Description of your automation or developer tool project. Explain how it improves workflows or solves a specific problem for developers or users.</li>
+												<li><b>Skills Gained:</b> Script development, command-line interfaces, process automation, cross-platform compatibility.</li>
+											</ul>
+										</li>
+									</ul>
+
+									<ul class="extra_gap">
+										<li>
+											<b><a href="https://github.com/username/project-five">Data Visualization Dashboard</a></b> [Year]<br>
+											<ul>
+												<li>Description of your data visualization or dashboard project. Explain what data is visualized, what insights it provides, and the technologies used.</li>
+												<li><b>Skills Gained:</b> Data analysis, interactive visualizations, dashboard design, working with charting libraries.</li>
+												<li><b>Live Demo:</b> <a href="https://dashboard.example.com" target="_blank">https://dashboard.example.com</a></li>
+											</ul>
+										</li>
 									</ul>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
-									<h2 id="Appointment">Appointment</h2>
+									<h2 id="Experience">Experience</h2>
+
+									<p style="text-align: justify;">
 									<ul>
-										<li><b>Frontend Developer Intern</b> [June 2023 - August 2023]<br>DemoWeb Agency<br><ul><li>Worked on demo landing pages and UI components.</li></ul></li>
+										<li>
+											<b>Position Title</b> [Month Year - Present/Month Year] <br>
+											<b><a href="https://company.com/">Company/Organization Name</a></b> <br>
+											<ul>
+												<li>Describe your key responsibilities and achievements in this role. Focus on quantifiable results and specific contributions you made to the organization.</li>
+												<li><b>Skills Gained:</b> List the technical and soft skills you developed or enhanced in this position, such as programming languages, frameworks, tools, or professional skills like teamwork and communication.</li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul>
-										<li><b>Content Writer</b> [Jan 2022 - May 2023]<br>Demo News Portal<br><ul><li>Wrote demo articles and tutorials for tech blog.</li></ul></li>
+										<li>
+											<b>Position Title</b> [Month Year - Month Year] <br>
+											<b><a href="https://organization.com/">Organization Name</a></b> <br>
+											<ul>
+												<li>Describe your contributions and what you accomplished during this experience. Include specific projects or initiatives you worked on.</li>
+												<li><b>Skills Gained:</b> Highlight the skills and knowledge you acquired through this experience.</li>
+											</ul>
+										</li>
 									</ul>
+
+									<ul>
+										<li>
+											<b>Position Title</b> [Month Year - Month Year] <br>
+											<b><a href="https://organization.com/">Organization Name</a></b><br>
+											<ul>
+												<li>Detail your role and responsibilities in this position. Explain how your work contributed to the organization's goals.</li>
+												<li><b>Skills Gained:</b> List the competencies and expertise you developed in this role.</li>
+											</ul>
+										</li>
+									</ul>
+
+
 								</td>
 							</tr>
 						</tbody>
 					</table>
+
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
 									<h2 id="Technical_Skill">Technical Skill</h2>
+									<p style="text-align: justify;">
 									<ul class="extra_gap">
-										<li><b>Programming Languages</b>: JavaScript, Python, Ruby</li>
-										<li><b>Web Technologies</b>: HTML5, CSS3, React, Vue.js, Node.js</li>
-										<li><b>Cloud Platforms</b>: AWS, Azure, GCP</li>
-										<li><b>Tools</b>: Git, Docker, Figma</li>
-										<li><b>Operating Systems</b>: Linux, Windows</li>
+										<li><b>Programming Languages</b>: Java, Python, C++, JavaScript</li>
+										<li><b>Web Technologies</b>: HTML5, CSS3, React, Node.js</li>
+										<li><b>Databases</b>: MySQL, PostgreSQL, MongoDB</li>
+										<li><b>Tools & Frameworks</b>: Git, Docker, TensorFlow, Django</li>
+										<li><b>Other Skills</b>: RESTful APIs, Agile Development, Cloud Platforms</li>
 									</ul>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+
+
+
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
-									<h2 id="Service">Service</h2>
+									<h2 id="Research">Research</h2>
+									<p style="text-align: justify;">
 									<ul>
-										<li><b>Volunteer</b> [2022 - 2024]<br>Demo Community Group<br><ul><li>Organized demo events and workshops.</li></ul></li>
+										<li>
+											<b>Research Project Title: <a href="https://github.com/username/research-project">Brief Descriptive Title</a></b> [Year]<br>
+											<ul>
+												<li><b>Status:</b> Published/Under Review/In Progress</li>
+												<li><b>Abstract:</b> Provide a comprehensive summary of your research work. Explain the problem you're addressing, your methodology, key findings, and the significance of your research. Include technical details about algorithms, datasets, or experiments conducted.</li>
+												<li><b>Skills Gained:</b> Research methodology, data analysis, technical writing, specific domain knowledge.</li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul>
-										<li><b>Mentor</b> [2023]<br>Demo Coding Bootcamp<br><ul><li>Mentored demo students in web development.</li></ul></li>
+										<li>
+											<b>Course Research: <a href="https://github.com/username/course-project">Project Title</a></b> [Course Code: Course Name]<br>
+											<ul>
+												<li>Describe the research project completed as part of a course. Explain the objectives, methodology, and outcomes.</li>
+												<li><b>Results:</b> Summarize the key findings and achievements of your research.</li>
+												<li><b>Skills Gained:</b> List the research and technical skills you developed through this project.</li>
+											</ul>
+										</li>
 									</ul>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+
+
+
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
 									<h2 id="Miscellaneous">Miscellaneous</h2>
+									<p style="text-align: justify;">
+
 									<ul>
-										<li><b>Participated in DemoFest</b> [2023]<br><ul><li>Demo open source event for developers.</li></ul></li>
+										<li><b>Participated in <a href="https://hackathon-event.com/">Event/Competition Name</a></b> [Year]<br>
+											<ul>
+												<li>Describe your participation in hackathons, competitions, or other significant events. Mention your achievements, what you built or accomplished, and the scale of the event.</li>
+												<li><b>Skills Gained:</b> Highlight the skills and experiences you gained from this participation.</li>
+											</ul>
+										</li>
 									</ul>
+
 									<ul>
-										<li><b>Completed Demo Security Challenge</b> [2023]<br><ul><li>24-day beginner-friendly security challenge.</li></ul></li>
+										<li><b>Participated in <a href="https://program.com/">Program/Initiative Name</a></b> [Year]<br>
+											<ul>
+												<li>Detail your involvement in special programs, workshops, or community initiatives. Explain what you learned and how you contributed.</li>
+												<li><b>Skills Gained:</b> List the competencies developed through this experience.</li>
+											</ul>
+										</li>
 									</ul>
+
+
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<footer>
-						<table class="section" style="border-spacing: 0;">
-							<tbody>
-								<tr>
-									<td class="footer-section">
-										<p id="last-modified" style="text-align: center; font-size: small; margin: 0;"></p>
-									</td>
-								</tr>
-								<tr>
-									<td class="footer-section">
-										<p style="text-align: center; font-size: small; margin: 0;">
-											Inspired by <a href="https://github.com/badhon495/academic-portfolio">badhon495</a>. 
-											Feel free to use this website's <a href="#">source code</a>.
-										</p>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</footer>
+
+
+
 					<div class="popup-overlay">
 						<div class="popup-content">
 							<span class="popup-close">&times;</span>
 							<h2>Anonymous Message</h2>
 							<form action="#" method="post">
-								<input type="hidden" name="_captcha" value="false">
 								<div class="form-group">
 									<label for="popup-name">Name (required)</label>
-									<input type="text" id="popup-name" name="name" placeholder="Enter any name" required>
+									<input type="text" id="popup-name" name="name"
+										placeholder="Any name you want me to call you" required>
 								</div>
 								<div class="form-group">
 									<label for="popup-email">Email</label>
-									<input type="email" id="popup-email" name="email" placeholder="Optional email">
+									<input type="email" id="popup-email" name="email"
+										placeholder="If you want me to reply">
 								</div>
 								<div class="form-group">
 									<label for="popup-message">Message (required)</label>
-									<textarea id="popup-message" name="message" placeholder="Type your demo message here" required></textarea>
+									<textarea id="popup-message" name="message"
+										placeholder="Say all the things you want" required></textarea>
 								</div>
 								<div class="form-group">
 									<input type="submit" value="Send">
@@ -245,10 +411,24 @@
 							</form>
 						</div>
 					</div>
-				</td>
-				</tr>
-		</tbody>
-	</table>
-</body>
 
+				</td>
+			</tr>
+	</table>
+
+	<!-- Footer Section -->
+	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 20px 15px; text-align: center; margin-top: 30px;">
+		<p style="margin: 8px 0; font-size: 0.95em;">
+			Want to send me an anonymous message? 
+			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click here</a> to share your thoughts anonymously.
+		</p>
+		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
+			<span id="lastModified">Last Modified: [Date will be automatically updated]</span>
+		</p>
+		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
+			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon Barron</a>.
+		</p>
+	</footer>
+
+</body>
 </html>
