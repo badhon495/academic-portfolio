@@ -7,15 +7,27 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
 
-	<title>Your Name - Academic Portfolio</title>
+	<title>Academic Portfolio</title>
 
 	<meta name="author" content="Your Name">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description"
-		content="Academic portfolio showcasing research, projects, and professional experience in Computer Science and related fields.">
+		content="Academic portfolio showcasing education, projects, research, and technical skills. A clean and responsive template for students and professionals.">
 
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/mail.css">
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+	<!-- Preload critical resources -->
+	<link rel="preload" href="css/stylesheet.min.css" as="style">
+	<link rel="preload" href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2" as="font"
+		type="font/woff2" crossorigin>
+
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mail.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" type="text/css" href="css/mail.css">
+	</noscript>
 
 	<!-- Immediate theme detection to prevent flash -->
 	<script>
@@ -23,6 +35,8 @@
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			document.documentElement.classList.add('dark-mode');
 		}
+		// Prevent FOUC by setting body visibility
+		document.documentElement.style.visibility = 'visible';
 	</script>
 
 	<script src="js/dark_mode.js" defer></script>
@@ -30,11 +44,38 @@
 	<script src="js/last_modified.js" defer></script>
 	<script src="js/hamburger.js" defer></script>
 	<script src="js/navbar_scroll.js" defer></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+	<script src="js/navbar_active.js" defer></script>
+	<script src="js/bio_scroll.js" defer></script>
+	<script src="js/smooth_scroll.js" defer></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		media="print" onload="this.media='all'" />
+	<noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+	</noscript>
 
-	<link rel="icon" type="image/svg+xml"
-		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='65%25' font-size='70' text-anchor='middle' fill='%238dd3e3' font-family='sans-serif' font-weight='bold'%3EY%3C/text%3E%3C/svg%3E" />
+	<!-- Favicon and App Icons -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="shortcut icon" href="/favicon.ico">
 
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+	<!-- Android Chrome Icons -->
+	<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+
+	<!-- Web App Manifest -->
+	<link rel="manifest" href="/site.webmanifest">
+
+	<!-- Microsoft Tiles -->
+	<meta name="msapplication-TileColor" content="#8dd3e3">
+	<meta name="msapplication-TileImage" content="/images/mstile-150x150.png">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+
+	<!-- Theme Color -->
+	<meta name="theme-color" content="#8dd3e3">
 </head>
 
 <body>
@@ -47,7 +88,7 @@
 				<span></span>
 				<span></span>
 			</button>
-			
+
 			<!-- Main navigation links -->
 			<a href="#Bio" class="nav-link nav-desktop">Bio</a>
 			<span class="navbar-separator">|</span>
@@ -57,19 +98,19 @@
 			<span class="navbar-separator">|</span>
 			<a href="#Experience" class="nav-link">Experience</a>
 			<span class="navbar-separator">|</span>
-			<a href="#Research" class="nav-link nav-desktop">Research</a>
-			<span class="navbar-separator">|</span>
 			<a href="#Technical_Skill" class="nav-link nav-desktop">Technical Skill</a>
+			<span class="navbar-separator">|</span>
+			<a href="#Research" class="nav-link nav-desktop">Research</a>
+
 			<span class="navbar-separator">|</span>
 			<a href="#Miscellaneous" class="nav-link nav-desktop">Miscellaneous</a>
 		</div>
-		
+
 		<!-- Mobile menu (hamburger dropdown) -->
 		<div class="mobile-menu" id="mobileMenu">
 			<a href="#Bio">Bio</a>
 			<a href="#Research">Research</a>
 			<a href="#Technical_Skill">Technical Skill</a>
-			<a href="#Experience">Experience</a>
 			<a href="#Miscellaneous">Miscellaneous</a>
 		</div>
 	</nav>
@@ -84,48 +125,43 @@
 								<td style="width:100%;vertical-align:middle;text-align:center;">
 									<!-- Profile Image -->
 									<div style="margin-bottom: 20px;">
-										<a href="images/profile-placeholder.jpg"><img
-												style="width:300px;max-width:100%;object-fit: cover; border-radius: 50%;"
-												alt="profile photo placeholder"
-												src="images/profile-placeholder.jpg" class="hoverZoomLink" loading="eager"
-												decoding="async" width="400" height="400"></a>
+										<div style="width:300px;max-width:100%;height:300px;border-radius:50%;background:#ddd;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:1.2em;color:#666;">
+											Your Photo
+										</div>
 									</div>
-									
 									<!-- Name -->
-									<p class="name" style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
-										Your Full Name
+									<p class="name" id="Bio-header"
+										style="text-align:center; font-size:2.5em; margin-top: 10px; margin-bottom: 5px;">
+										Your Name
 									</p>
 
 									<!-- Links -->
 									<p style="text-align:center; margin-top: 5px; margin-bottom: 50px; font-size: 0.8em;">
-										<a href="data/resume.pdf">Resume</a> &nbsp;/&nbsp;
-										<a href="mailto:youremail@example.com">Email</a> &nbsp;/&nbsp;
-										<a href="https://www.github.com/yourusername">Github</a> &nbsp;/&nbsp;
-										<a href="https://www.linkedin.com/in/yourusername">Linkedin</a> &nbsp;/&nbsp;
-										<a href="https://leetcode.com/yourusername/">LeetCode</a> &nbsp;/&nbsp;
-										<a href="https://yourusername.hashnode.dev/">Blog</a>
+										<a href="#">Resume</a> &nbsp;/&nbsp;
+										<a href="mailto:your.email@example.com">Email</a> &nbsp;/&nbsp;
+										<a href="https://github.com/yourusername">Github</a> &nbsp;/&nbsp;
+										<a href="https://linkedin.com/in/yourusername">Linkedin</a>
 									</p>
 
 									<!-- Bio -->
 									<p style="text-align: justify; max-width: 800px; margin: 20px auto;">
-										A passionate <b>Computer Science</b> student with a strong foundation in <b>Software Development</b>, 
-										<b>System Design</b>, and <b>Problem Solving</b>. Currently pursuing my 
-										Bachelor's degree at <a href="https://university.edu/">Your University</a>. 
-										I have demonstrated expertise in <b>full-stack development</b>, <b>data structures</b>, and 
-										<b>algorithms</b> through diverse academic projects and hands-on experiences.
+										A passionate <b>Computer Science</b> student with a strong foundation in
+										<b>Software Development</b> and <b>Technology</b>. Currently
+										pursuing a Bachelor's degree at <a href="#">Your University</a>.
+										Demonstrated expertise in <b>web development</b>, <b>programming</b>, and
+										<b>problem-solving</b> through diverse academic projects.
 										<br><br>
-										My journey spans across multiple domains including <b>Web Development</b>, 
-										<b>Machine Learning</b>, and <b>Database Systems</b>, where I actively explore innovative solutions 
-										and industry best practices. With a proven ability to deliver <b>practical, scalable solutions</b> 
-										while maintaining academic excellence, I am passionate about building <b>efficient systems</b> that 
-										solve real-world problems. I continuously push my technical boundaries through hands-on projects, 
-										contributing to open-source, and staying current with evolving technologies.
+										Interested in emerging technologies including <b>Machine Learning</b>,
+										<b>Cloud Computing</b>, and <b>Software Engineering</b>.
+										Committed to continuous learning and building practical solutions that address
+										real-world challenges.
 										<br><br>
 									</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Bio"></div>
 
 					<table class="section" style="margin-top: -20px;">
 						<tbody>
@@ -135,57 +171,38 @@
 									<p style="text-align: justify;">
 									<ul>
 										<li>
-											<b>Pursuing Bachelor of Science in <a
-													href="https://university.edu/program/computer-science">Computer
-													Science</a></b> [Month Year - ]
+											<b>Pursuing Bachelor of Science in Computer Science</b> [Year - ]
 											<br>
-											<a href="https://university.edu/">Your University Name</a> <br>
+											<a href="#">Your University</a> <br>
 											<ul>
 												<li><b>CGPA</b> : <b>X.XX/4.00</b></li>
-												<li>Recognized on the <b>Dean's List</b> and awarded <b>Merit Scholarship</b> across <b>multiple semesters</b> for academic excellence.</li>
-												<li>Completed several <b>elective courses</b> focused on
-													<b>emerging and practical technologies</b>:
+												<li>Relevant coursework includes:
 													<ul>
-														<li>CSE101: Data Structures and Algorithms</li>
-														<li>CSE202: Web Development</li>
-														<li>CSE303: Database Systems</li>
-														<li>CSE404: Machine Learning</li>
-														<li>CSE505: Software Engineering</li>
-														<li>CSE606: Computer Networks</li>
+														<li>Data Structures and Algorithms</li>
+														<li>Database Management Systems</li>
+														<li>Web Development</li>
+														<li>Machine Learning</li>
+														<li>Software Engineering</li>
+														<li>Computer Networks</li>
 													</ul>
 												</li>
 											</ul>
 										</li>
 									</ul>
 									<ul>
-										<li><b>Completed
-												<a href="https://coursera.org/certificate/example">Professional Certificate in Technology</a></b> [Year]<br>
+										<li><b>Professional Certifications</b><br>
 											<ul>
-												<li>Acquired skills in <b>recognizing and addressing</b> common technical challenges</li>
-												<li>Gained <b>hands-on experience</b> in <b>practical problem solving</b></li>
-												<li>Mastered <b>programming language</b> for practical applications</li>
-												<li>Developed proficiency in <b>relevant tools and technologies</b></li>
+												<li>Add your relevant certifications here</li>
+												<li>Online courses and professional development</li>
+												<li>Technical training and workshops</li>
 											</ul>
 										</li>
 									</ul>
-
-									<ul>
-										<li>
-											<b>Completed <a href="https://example.com/certification">Industry Certification Program</a></b> [Year]<br>
-											<ul>
-												<li>Gained comprehensive knowledge in <b>specific technical domain</b></li>
-												<li>Completed <b>hands-on projects</b> demonstrating practical skills</li>
-												<li>Learned industry best practices and <b>modern development methodologies</b></li>
-											</ul>
-										</li>
-									</ul>
-
 								</td>
 							</tr>
 						</tbody>
 					</table>
-
-
+					<div class="section-bottom-indicator" data-section="Education"></div>
 
 					<table class="section">
 						<tbody>
@@ -195,55 +212,32 @@
 									<p style="text-align: justify;">
 									<ul class="extra_gap">
 										<li>
-											<b><a href="https://github.com/username/project-one">Full-Stack Web Application</a></b> [Year]<br>
+											<b><a href="#">Project Title 1</a></b> [Year]<br>
 											<ul>
-												<li>Description of your full-stack web application project. Include key features, technologies used, and what problems it solves. Mention any unique aspects or innovative approaches you implemented.</li>
-												<li><b>Skills Gained:</b> Full-stack development with modern frameworks, implementing authentication systems, database design and optimization, API development, responsive UI/UX design.</li>
-												<li><b>Live Demo:</b> <a href="https://demo.example.com" target="_blank">https://demo.example.com</a></li>
+												<li>Brief description of your project. Explain what problem it solves, 
+													the technologies used, and its key features.</li>
+												<li><b>Technologies:</b> List the main technologies, frameworks, and tools used.</li>
+												<li><b>Skills Gained:</b> Describe what you learned from this project.</li>
 											</ul>
 										</li>
 									</ul>
-
 									<ul class="extra_gap">
 										<li>
-											<b><a href="https://github.com/username/project-two">Machine Learning Project</a></b> [Year]<br>
+											<b><a href="#">Project Title 2</a></b> [Year]<br>
 											<ul>
-												<li>Description of your machine learning project. Explain the problem you're solving, the dataset used, and the algorithms implemented. Highlight accuracy rates or performance metrics.</li>
-												<li><b>Impact:</b> Achieved XX% accuracy in solving a real-world problem, demonstrating practical application of ML techniques.</li>
-												<li><b>Skills Gained:</b> Data preprocessing, feature engineering, model training and evaluation, working with popular ML libraries.</li>
-												<li><b>Live Demo:</b> <a href="https://ml-demo.example.com" target="_blank">https://ml-demo.example.com</a></li>
+												<li>Another project description with details about its purpose and implementation.</li>
+												<li><b>Technologies:</b> Technologies used in this project.</li>
+												<li><b>Skills Gained:</b> Key learnings and competencies developed.</li>
 											</ul>
 										</li>
 									</ul>
-
 									<ul class="extra_gap">
 										<li>
-											<b><a href="https://github.com/username/project-three">Mobile Application</a></b> [Year]<br>
+											<b><a href="#">Project Title 3</a></b> [Year]<br>
 											<ul>
-												<li>Description of your mobile app project. Detail the functionality, user interface, and platform(s) it supports. Mention any integrations or APIs used.</li>
-												<li><b>Impact:</b> Served XXX+ users, demonstrating strong user adoption and value.</li>
-												<li><b>Skills Gained:</b> Mobile app development, state management, API integration, responsive design for multiple screen sizes.</li>
-											</ul>
-										</li>
-									</ul>
-
-									<ul class="extra_gap">
-										<li>
-											<b><a href="https://github.com/username/project-four">Automation Tool</a></b> [Year]<br>
-											<ul>
-												<li>Description of your automation or developer tool project. Explain how it improves workflows or solves a specific problem for developers or users.</li>
-												<li><b>Skills Gained:</b> Script development, command-line interfaces, process automation, cross-platform compatibility.</li>
-											</ul>
-										</li>
-									</ul>
-
-									<ul class="extra_gap">
-										<li>
-											<b><a href="https://github.com/username/project-five">Data Visualization Dashboard</a></b> [Year]<br>
-											<ul>
-												<li>Description of your data visualization or dashboard project. Explain what data is visualized, what insights it provides, and the technologies used.</li>
-												<li><b>Skills Gained:</b> Data analysis, interactive visualizations, dashboard design, working with charting libraries.</li>
-												<li><b>Live Demo:</b> <a href="https://dashboard.example.com" target="_blank">https://dashboard.example.com</a></li>
+												<li>Description of a third project showcasing different skills.</li>
+												<li><b>Technologies:</b> Technical stack used.</li>
+												<li><b>Skills Gained:</b> What you learned through this experience.</li>
 											</ul>
 										</li>
 									</ul>
@@ -251,52 +245,39 @@
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Project"></div>
 
 					<table class="section">
 						<tbody>
 							<tr>
 								<td class="sub-section">
 									<h2 id="Experience">Experience</h2>
-
 									<p style="text-align: justify;">
 									<ul>
 										<li>
-											<b>Position Title</b> [Month Year - Present/Month Year] <br>
-											<b><a href="https://company.com/">Company/Organization Name</a></b> <br>
+											<b>Position Title</b> [Start Date - End Date] <br>
+											<b><a href="#">Organization Name</a></b> <br>
 											<ul>
-												<li>Describe your key responsibilities and achievements in this role. Focus on quantifiable results and specific contributions you made to the organization.</li>
-												<li><b>Skills Gained:</b> List the technical and soft skills you developed or enhanced in this position, such as programming languages, frameworks, tools, or professional skills like teamwork and communication.</li>
+												<li>Description of your responsibilities and contributions in this role.</li>
+												<li><b>Skills Gained:</b> List the key skills and experiences you developed.</li>
 											</ul>
 										</li>
 									</ul>
-
 									<ul>
 										<li>
-											<b>Position Title</b> [Month Year - Month Year] <br>
-											<b><a href="https://organization.com/">Organization Name</a></b> <br>
+											<b>Another Position</b> [Start Date - End Date] <br>
+											<b><a href="#">Another Organization</a></b> <br>
 											<ul>
-												<li>Describe your contributions and what you accomplished during this experience. Include specific projects or initiatives you worked on.</li>
-												<li><b>Skills Gained:</b> Highlight the skills and knowledge you acquired through this experience.</li>
+												<li>Details about this experience and what you accomplished.</li>
+												<li><b>Skills Gained:</b> Skills and knowledge acquired.</li>
 											</ul>
 										</li>
 									</ul>
-
-									<ul>
-										<li>
-											<b>Position Title</b> [Month Year - Month Year] <br>
-											<b><a href="https://organization.com/">Organization Name</a></b><br>
-											<ul>
-												<li>Detail your role and responsibilities in this position. Explain how your work contributed to the organization's goals.</li>
-												<li><b>Skills Gained:</b> List the competencies and expertise you developed in this role.</li>
-											</ul>
-										</li>
-									</ul>
-
-
 								</td>
 							</tr>
 						</tbody>
 					</table>
+					<div class="section-bottom-indicator" data-section="Experience"></div>
 
 					<table class="section">
 						<tbody>
@@ -305,18 +286,17 @@
 									<h2 id="Technical_Skill">Technical Skill</h2>
 									<p style="text-align: justify;">
 									<ul class="extra_gap">
-										<li><b>Programming Languages</b>: Java, Python, C++, JavaScript</li>
+										<li><b>Programming Languages</b>: Python, Java, C++, JavaScript</li>
 										<li><b>Web Technologies</b>: HTML5, CSS3, React, Node.js</li>
-										<li><b>Databases</b>: MySQL, PostgreSQL, MongoDB</li>
-										<li><b>Tools & Frameworks</b>: Git, Docker, TensorFlow, Django</li>
-										<li><b>Other Skills</b>: RESTful APIs, Agile Development, Cloud Platforms</li>
+										<li><b>Database</b>: MySQL, PostgreSQL, MongoDB</li>
+										<li><b>Tools & Frameworks</b>: Git, Docker, Linux, VS Code</li>
+										<li><b>Other Skills</b>: Problem Solving, Data Structures, Algorithms</li>
 									</ul>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-
-
+					<div class="section-bottom-indicator" data-section="Technical_Skill"></div>
 
 					<table class="section">
 						<tbody>
@@ -326,22 +306,12 @@
 									<p style="text-align: justify;">
 									<ul>
 										<li>
-											<b>Research Project Title: <a href="https://github.com/username/research-project">Brief Descriptive Title</a></b> [Year]<br>
+											<b>Research Project Title</b> [Year]<br>
 											<ul>
-												<li><b>Status:</b> Published/Under Review/In Progress</li>
-												<li><b>Abstract:</b> Provide a comprehensive summary of your research work. Explain the problem you're addressing, your methodology, key findings, and the significance of your research. Include technical details about algorithms, datasets, or experiments conducted.</li>
-												<li><b>Skills Gained:</b> Research methodology, data analysis, technical writing, specific domain knowledge.</li>
-											</ul>
-										</li>
-									</ul>
-
-									<ul>
-										<li>
-											<b>Course Research: <a href="https://github.com/username/course-project">Project Title</a></b> [Course Code: Course Name]<br>
-											<ul>
-												<li>Describe the research project completed as part of a course. Explain the objectives, methodology, and outcomes.</li>
-												<li><b>Results:</b> Summarize the key findings and achievements of your research.</li>
-												<li><b>Skills Gained:</b> List the research and technical skills you developed through this project.</li>
+												<li><b>Description:</b> Brief overview of your research work, methodology, 
+													and findings.</li>
+												<li><b>Technologies/Methods:</b> Tools and approaches used in the research.</li>
+												<li><b>Results:</b> Key outcomes and conclusions.</li>
 											</ul>
 										</li>
 									</ul>
@@ -349,8 +319,7 @@
 							</tr>
 						</tbody>
 					</table>
-
-
+					<div class="section-bottom-indicator" data-section="Research"></div>
 
 					<table class="section">
 						<tbody>
@@ -358,77 +327,69 @@
 								<td class="sub-section">
 									<h2 id="Miscellaneous">Miscellaneous</h2>
 									<p style="text-align: justify;">
-
 									<ul>
-										<li><b>Participated in <a href="https://hackathon-event.com/">Event/Competition Name</a></b> [Year]<br>
+										<li><b>Activities & Achievements</b><br>
 											<ul>
-												<li>Describe your participation in hackathons, competitions, or other significant events. Mention your achievements, what you built or accomplished, and the scale of the event.</li>
-												<li><b>Skills Gained:</b> Highlight the skills and experiences you gained from this participation.</li>
+												<li>Participated in programming competitions and hackathons</li>
+												<li>Active contributor to open-source projects</li>
+												<li>Member of technical clubs and organizations</li>
+												<li>Attended workshops and technical conferences</li>
 											</ul>
 										</li>
 									</ul>
-
-									<ul>
-										<li><b>Participated in <a href="https://program.com/">Program/Initiative Name</a></b> [Year]<br>
-											<ul>
-												<li>Detail your involvement in special programs, workshops, or community initiatives. Explain what you learned and how you contributed.</li>
-												<li><b>Skills Gained:</b> List the competencies developed through this experience.</li>
-											</ul>
-										</li>
-									</ul>
-
-
 								</td>
 							</tr>
 						</tbody>
 					</table>
-
-
-
-					<div class="popup-overlay">
-						<div class="popup-content">
-							<span class="popup-close">&times;</span>
-							<h2>Anonymous Message</h2>
-							<form action="#" method="post">
-								<div class="form-group">
-									<label for="popup-name">Name (required)</label>
-									<input type="text" id="popup-name" name="name"
-										placeholder="Any name you want me to call you" required>
-								</div>
-								<div class="form-group">
-									<label for="popup-email">Email</label>
-									<input type="email" id="popup-email" name="email"
-										placeholder="If you want me to reply">
-								</div>
-								<div class="form-group">
-									<label for="popup-message">Message (required)</label>
-									<textarea id="popup-message" name="message"
-										placeholder="Say all the things you want" required></textarea>
-								</div>
-								<div class="form-group">
-									<input type="submit" value="Send">
-								</div>
-							</form>
-						</div>
-					</div>
-
 				</td>
 			</tr>
+		</tbody>
 	</table>
+	<div class="section-bottom-indicator" data-section="Miscellaneous"></div>
 
 	<!-- Footer Section -->
 	<footer style="background-color: rgba(0, 0, 0, 0.05); padding: 20px 15px; text-align: center; margin-top: 30px;">
 		<p style="margin: 8px 0; font-size: 0.95em;">
-			Want to send me an anonymous message? 
-			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click here</a> to share your thoughts anonymously.
+			Want to send me an anonymous message?
+			<a href="#" id="anonymousMessageFooterLink" style="font-weight: bold; text-decoration: underline;">Click
+				here</a> to share your thoughts anonymously.
 		</p>
 		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
-			<span id="lastModified">Last Modified: [Date will be automatically updated]</span>
+			<span id="lastModified">Last Modified: </span>
 		</p>
 		<p style="margin: 8px 0; font-size: 0.85em; color: #666;">
-			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon Barron</a>.
+			Website design inspired by <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon
+				Barron</a>.
 		</p>
 	</footer>
 
+	<!-- Popup for anonymous messages -->
+	<div class="popup-overlay">
+		<div class="popup-content">
+			<span class="popup-close">&times;</span>
+			<h2>Anonymous Message</h2>
+			<form action="#" method="post">
+				<div class="form-group">
+					<label for="popup-name">Name (required)</label>
+					<input type="text" id="popup-name" name="name" placeholder="Any name you want me to call you"
+						required>
+				</div>
+				<div class="form-group">
+					<label for="popup-email">Email</label>
+					<input type="email" id="popup-email" name="email" placeholder="If you want me to reply">
+				</div>
+				<div class="form-group">
+					<label for="popup-message">Message (required)</label>
+					<textarea id="popup-message" name="message" placeholder="Say all the things you want"
+						required></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+	</div>
+
 </body>
+
 </html>

@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(form);
-        fetch('https://formsubmit.co/ajax/badhon495@gmail.com', {
+        // Replace with your own email or form service endpoint
+        fetch('https://formsubmit.co/ajax/your.email@example.com', {
             method: 'POST',
             body: formData,
         })
